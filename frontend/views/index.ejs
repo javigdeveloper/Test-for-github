@@ -3,5 +3,12 @@
   <%- include('./partials/head.ejs') %>
   <body>
     <h1>Serving EJS File!!</h1>
+    <% if (result) { %> <% result.forEach( task => { %>
+    <!-- <div><%- task.body %></div> -->
+    <%- task.body %> <% }) %> <% } %>
+    <!-- <p><%= result %></p>
+    <% if (result) { %>
+    <div><%- result[0].body %></div>
+    <% } %> -->
   </body>
 </html>
