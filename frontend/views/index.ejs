@@ -3,18 +3,15 @@
   <%- include('./partials/head.ejs') %>
   <body>
     <%- include('./partials/nav.ejs') %>
-    <h1>Serving EJS File!!</h1>
-    <% if (result) { %>
-      <% result.forEach( task => { %>
-        <div>
-          <a href="/create"><%- task.subject %></a>
-        </div>
-        <!-- <div><%- task.body %></div> -->
-      <% }) %>
-    <% } %>
-        <!-- <p><%= result %></p>
-    <% if (result) { %>
-    <div><%- result[0].body %></div>
-    <% } %> -->
+    <div class="content">
+      <h1>Choose the subject you want to work on:</h1>
+      <div class="links">
+        <% if (result) { %>
+          <% result.forEach( task => { %>
+            <a href="/<%= task._id %>"><%= task.subject %></a>
+          <% }) %>
+        <% } %>
+      </div>
+    </div>
   </body>
 </html>
