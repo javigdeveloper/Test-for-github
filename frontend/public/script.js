@@ -85,7 +85,7 @@ const changeSpan = (e) => {
 };
 paragraph.addEventListener("click", changeSpan);
 
-// populate options when clicking options button...
+// populate options when clicking options button after typing alternatives...
 optionsBtn.addEventListener("click", () => {
   let answerIndex = Math.floor(Math.random() * 4);
   const htmlCollection = document.getElementsByClassName("altOptions");

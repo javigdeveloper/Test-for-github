@@ -1,46 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('./partials/head.ejs') %>
-  <body id="myBody">
-    <!-- to be hidden: -->
-    <div id="teacherControls" class="teacherControlsClass">
-      <textarea id="initialArea" cols="50" rows="15"></textarea>
-      <p>Type or paste initial text to be edited.</p>
-      <button id="teacherBtn">Start editing</button>
-    </div>
-    <!-- instructions title message: -->
-    <h1 id="instructions" class="instructionsClass"></h1>
-    <!-- paragraph: -->
-    <p id="myParaId" class="myParaClass pointerClass"></p>
-    <!-- editing fields: -->
-    <div class="hide inputsClass" id="inputsId">
-      <p>Type alternative options. The program will randomly select a position for the correct answer.</p>
-      <div class="innerDiv">
-        <input id="correctInput" type="text" />
-        <span>correct option</span>
-      </div>
-      <div class="innerDiv">
-        <input class="altOptions" type="text" />
-      </div>
-      <div class="innerDiv">
-        <input class="altOptions" type="text" />
-      </div>
-      <div class="innerDiv">
-        <input class="altOptions" type="text" />
-      </div>
-      <button id="optionsBtn" class="optionsBtnClass">Enter options</button>
-    </div>
-    <!-- editing phase instructions: -->
-    <div class="hide toExerciseClass" id="goToExerciseId">
-      <p>When you're done editing the words, click on the GO TO EXERCISE button to change to student view.</p>
-      <button id="goToExerciseBtn" class="goToExerciseBtnClass">GO TO EXERCISE</button>
-    </div>
-    <script src="script.js"></script>
+  <body>
+    <%- include('./partials/nav.ejs') %>
     <h1>Serving EJS File!!</h1>
-    <% if (result) { %> <% result.forEach( task => { %>
-    <!-- <div><%- task.body %></div> -->
-    <%- task.body %> <% }) %> <% } %>
-    <!-- <p><%= result %></p>
+    <% if (result) { %>
+      <% result.forEach( task => { %>
+        <div>
+          <a href="/create"><%- task.subject %></a>
+        </div>
+        <!-- <div><%- task.body %></div> -->
+      <% }) %>
+    <% } %>
+        <!-- <p><%= result %></p>
     <% if (result) { %>
     <div><%- result[0].body %></div>
     <% } %> -->
