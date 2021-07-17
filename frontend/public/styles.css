@@ -22,6 +22,8 @@
 .links a {
   margin-bottom: 16px;
   font-size: 22px;
+  padding: 20px;
+  background-color: #f1d8d8;
 }
 body form {
   display: flex;
@@ -34,4 +36,25 @@ textarea {
 }
 button {
   width: 60px;
+}
+.task-box {
+  background-color: #f1d8d8;
+  padding: 20px;
+}
+.delete {
+  padding: 6px;
+  font-size: 18px;
+  color: #808080;
+  background-color: #f1d8d8;
+  display: block;
+  margin: 20px auto;
+  width: 6%;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  box-shadow: 3px 5px 3px #d4d4d4;
+  cursor: pointer;
+}
+.delete:hover {
+  color: #a20202;
 }
