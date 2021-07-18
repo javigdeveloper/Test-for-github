@@ -13,16 +13,13 @@
     <script>
       const bin = document.querySelector("#bin");
       bin.addEventListener("click", (e) => {
-        const endpoint = `/${bin.dataset.doc}`
+        const endpoint = `/${bin.dataset.doc}`;
 
-        fetch(endpoint, {
-          method: "delete"          
-        })
-        .then((response) => response.json())
-        .then(data => window.location.href = data.redirect)
-        .catch(err => console.log(err));
+        fetch(endpoint, { method: "delete" })
+          .then((response) => response.json())
+          .then(data => window.location.href = data.redirect)
+          .catch(err => console.log(err));
       });
-
     </script>
   </body>
 </html>
