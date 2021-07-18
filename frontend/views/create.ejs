@@ -33,17 +33,17 @@
     </div>
     <!-- editing phase instructions: -->
     <div class="hide toExerciseClass" id="goToExerciseId">
-      <p>When you're done editing the words, click on the GO TO EXERCISE button to change to student view.</p>
-      <button id="goToExerciseBtn" class="goToExerciseBtnClass">GO TO EXERCISE</button>
+      <p>When you're done editing the words, click Finish and then add details about the task.</p>
+      <button id="finishBtn" class="finishBtnClass">Finish</button>
     </div>
-    <form action="/create" method="post">
+    <form action="/create" method="post" id="dbForm" class="hide">
       <label for="subject">Subject:</label>
       <input name="subject" type="text" id="subject" required />
       <label for="text-content">Enter your text here:</label>
       <textarea name="body" id="text-content" cols="30" rows="10" required></textarea>
       <label for="student">Student: (optional)</label>
       <input name="student" type="text" id="student" />
-      <button type="submit">Save</button>
+      <button type="submit" class="create-btn">Save</button>
     </form>
     <script src="script.js"></script>
   </body>

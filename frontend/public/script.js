@@ -6,8 +6,12 @@ const paragraph = document.getElementById("myParaId");
 const inputs = document.getElementById("inputsId");
 const optionsBtn = document.getElementById("optionsBtn");
 const goToExercise = document.getElementById("goToExerciseId");
-const goToExerciseBtn = document.getElementById("goToExerciseBtn");
+const finishBtn = document.getElementById("finishBtn");
 let clickedSpan = false;
+// ---------------------------------------------------------------
+const textContent = document.getElementById("text-content");
+const dbForm = document.getElementById("dbForm");
+// ---------------------------------------------------------------
 
 // add span for each word and br for new lines...
 const transformText = (str) => {
@@ -130,11 +134,11 @@ optionsBtn.addEventListener("click", () => {
 });
 
 // button adds event listener to each select tag...
-goToExerciseBtn.addEventListener("click", () => {
+finishBtn.addEventListener("click", () => {
   goToExercise.classList.remove("show");
   paragraph.classList.remove("pointerClass");
   paragraph.removeEventListener("click", changeSpan);
-  instructions.innerText = "Choose the correct option";
+  instructions.innerText = "Add extra details to exercise";
 
   const selectTags = document.getElementsByTagName("select");
   for (const tag of selectTags) {
@@ -146,4 +150,8 @@ goToExerciseBtn.addEventListener("click", () => {
       }
     });
   }
+  dbForm.classList.remove("hide");
+  textContent.value = paragraph.innerHTML;
+  paragraph.classList.add("hide");
+  textContent.classList.add("hide");
 });
