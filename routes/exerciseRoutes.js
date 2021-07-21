@@ -21,7 +21,7 @@ router.post("/create", (req, res) => {
   task
     .save()
     .then((result) => {
-      res.redirect("/");
+      res.redirect("/exercises");
     })
     .catch((err) => {
       console.log(err);
@@ -36,6 +36,7 @@ router.get("/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(404).render("404");
     });
 });
 
@@ -43,11 +44,15 @@ router.delete("/:id", (req, res) => {
   const id = req.params.id;
   Exercise.findByIdAndDelete(id)
     .then((result) => {
-      res.json({ redirect: "/" });
+      res.json({ redirect: "/exercises" });
     })
     .catch((err) => {
       console.log(err);
     });
+});
+
+router.use((req, res) => {
+  res.status(404).render("404");
 });
 
 module.exports = router;

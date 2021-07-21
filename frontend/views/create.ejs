@@ -36,7 +36,7 @@
       <p>When you're done editing the words, click Finish and then add details about the task.</p>
       <button id="finishBtn" class="finishBtnClass">Finish</button>
     </div>
-    <form action="/create" method="post" id="dbForm" class="hide">
+    <form action="/exercises/create" method="post" id="dbForm" class="hide">
       <label for="subject">Subject:</label>
       <input name="subject" type="text" id="subject" required />
       <label for="text-content">Enter your text here:</label>
@@ -45,6 +45,6 @@
       <input name="student" type="text" id="student" />
       <button type="submit" class="create-btn">Save</button>
     </form>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

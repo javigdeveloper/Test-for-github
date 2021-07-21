@@ -13,7 +13,7 @@
     <script>
       const bin = document.querySelector("#bin");
       bin.addEventListener("click", (e) => {
-        const endpoint = `/${bin.dataset.doc}`;
+        const endpoint = `/exercises/${bin.dataset.doc}`;
 
         fetch(endpoint, { method: "delete" })
           .then((response) => response.json())

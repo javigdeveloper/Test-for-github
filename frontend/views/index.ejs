@@ -8,7 +8,7 @@
       <div class="links">
         <% if (result) { %>
           <% result.forEach( task => { %>
-            <a href="/<%= task._id %>"><%= task.subject %></a>
+            <a href="/exercises/<%= task._id %>"><%= task.subject %></a>
           <% }) %>
         <% } %>
       </div>
