@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head.ejs') %>
+  <%- include('../partials/head.ejs') %>
   <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('../partials/nav.ejs') %>
     <!-- to be hidden: -->
     <div id="teacherControls" class="teacherControlsClass">
       <textarea id="initialArea" cols="50" rows="15"></textarea>
@@ -36,7 +36,7 @@
       <p>When you're done editing the words, click Finish and then add details about the task.</p>
       <button id="finishBtn" class="finishBtnClass">Finish</button>
     </div>
-    <form action="/exercises/create" method="post" id="dbForm" class="hide">
+    <form action="/exercises/create" method="POST" id="dbForm" class="hide">
       <label for="subject">Subject:</label>
       <input name="subject" type="text" id="subject" required />
       <label for="text-content">Enter your text here:</label>
