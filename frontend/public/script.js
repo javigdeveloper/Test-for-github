@@ -139,17 +139,6 @@ finishBtn.addEventListener("click", () => {
   paragraph.classList.remove("pointerClass");
   paragraph.removeEventListener("click", changeSpan);
   instructions.innerText = "Add extra details to exercise";
-
-  const selectTags = document.getElementsByTagName("select");
-  for (const tag of selectTags) {
-    tag.addEventListener("change", () => {
-      let tempAnswer = tag.getAttribute("data-a-index");
-      let selectedOption = tag.options.selectedIndex;
-      if (tempAnswer == selectedOption) {
-        tag.classList.add("correct");
-      }
-    });
-  }
   dbForm.classList.remove("hide");
   textContent.value = paragraph.innerHTML;
   paragraph.classList.add("hide");

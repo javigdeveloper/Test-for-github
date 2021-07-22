@@ -21,6 +21,17 @@
           .then(data => window.location.href = data.redirect)
           .catch(err => console.log(err));
       });
+
+      const selectTags = document.getElementsByTagName("select");
+      for (const tag of selectTags) {
+        tag.addEventListener("change", () => {
+          let tempAnswer = tag.getAttribute("data-a-index");
+          let selectedOption = tag.options.selectedIndex;
+          if (tempAnswer == selectedOption) {
+            tag.classList.add("correct");
+          }
+        });
+      }
     </script>
   </body>
 </html>
