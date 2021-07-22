@@ -5,8 +5,9 @@
     <%- include('./partials/nav.ejs') %>
     <div class="content">
       <% if (result) { %>
-        <div><%= result.subject %></div>
+        <div>Subject: <%= result.subject %></div>
         <div class="task-box"><%- result.body %></div>
+        <div>Student: <%- result.student %></div>
       <% } %>
       <a class="delete" id="bin" data-doc="<%= result._id %>">delete</a>
     </div>
