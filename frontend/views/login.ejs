@@ -3,8 +3,15 @@
   <%- include('./partials/head.ejs') %>
   <body>
     <%- include('./partials/nav.ejs') %>
-    <div class="content">
+    <div>
       <h1>Login page</h1>
+      <form action="/login" method="POST">
+        <label for="userName">User Name:</label>
+        <input name="userName" type="text" id="userName" required />
+        <label for="password">Password:</label>
+        <input name="password" type="text" id="password" required />
+        <button type="submit">Login</button>
+      </form>
     </div>
   </body>
 </html>
