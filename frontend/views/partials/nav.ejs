@@ -1,5 +1,28 @@
 <nav class="nav-style">
   <a href="/exercises">All exercises</a>
   <a href="/exercises/create">Create exercise</a>
-  <a href="/login">Admin Login</a>
+  <a id="adminModal">Administrator</a>
 </nav>
+<div id="modalBgId" class="modal-background">
+  <div class="modal">
+    <h1>Have you got an admin secret key?</h1>
+    <p>if so, sign up or log in:</p>
+    <a href="../signup">Sign up</a>
+    <a href="../login">Log in</a>
+  </div>
+</div>
+<script>
+  const adminModal = document.getElementById("adminModal");
+  const modalBgId = document.getElementById("modalBgId");
+  // open modal:
+  adminModal.addEventListener("click", () => {
+    modalBgId.classList.add("open");
+  });
+  
+  // close modal:
+  modalBgId.addEventListener("click", (e) => {
+    if (e.target.classList.contains("modal-background")) {
+      modalBgId.classList.remove("open");
+    }
+  })
+</script>
