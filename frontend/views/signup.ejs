@@ -5,9 +5,11 @@
     <%- include('./partials/nav.ejs') %>
     <div>
       <h1>Signup page</h1>
-      <form>
+      <form action="signup" method="POST">
         <label for="userName">User Name:</label>
-        <input name="userName" type="text" id="userName" required />
+        <input name="userName" type="text" id="userName" />
+        <label for="adminKey">Admin joining key:</label>
+        <input name="adminKey" type="text" id="adminKey" />
         <label for="password">Password:</label>
         <input name="password" type="text" id="password" required />
         <button type="submit">Sign up</button>
