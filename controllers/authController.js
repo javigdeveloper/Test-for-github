@@ -33,14 +33,19 @@ const signup_get = (req, res) => {
 };
 
 const signup_post = async (req, res) => {
-  const { userName, password } = req.body;
+  const { userName, adminKey, password } = req.body;
+  const joiningKey = "testKey";
 
-  try {
-    const user = await User.create({ userName, password });
-    res.status(201).json(user);
-  } catch (err) {
-    const errors = handleErrors(err);
-    res.status(400).json({ errors });
+  if (joiningKey === adminKey) {
+    try {
+      const user = await User.create({ userName, password });
+      res.status(201).json(user);
+    } catch (err) {
+      const errors = handleErrors(err);
+      res.status(400).json({ errors });
+    }
+  } else {
+    res.status(400).send("you need a valid admin key");
   }
 };
 
