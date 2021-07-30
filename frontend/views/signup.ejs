@@ -8,19 +8,26 @@
       <form id="myForm">
         <label for="userName">User Name:</label>
         <input name="userName" type="text" id="userName" />
+        <div id="userNameError"></div>
         <label for="adminKey">Admin joining key:</label>
         <input name="adminKey" type="text" id="adminKey" />
+        <div id="adminKeyError"></div>
         <label for="password">Password:</label>
         <input name="password" type="password" id="password" required />
+        <div id="passwordError"></div>
         <button>Sign up</button>
       </form>
     </div>
     <script>
       const myForm = document.getElementById("myForm");
+      const userNameError = document.getElementById("userNameError");
+      const adminKeyError = document.getElementById("adminKeyError");
+      const passwordError = document.getElementById("passwordError");
 
       myForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
+        // get the values:
         const userName = myForm.userName.value;
         const adminKey = myForm.adminKey.value;
         const password = myForm.password.value;
@@ -30,6 +37,16 @@
             body: JSON.stringify({ userName, adminKey, password }),
             headers: { "Content-Type": "application/json" },
           });
+          const data = await res.json();
+          console.log(data);
+          if (data.errors) {
+            userNameError.textContent = data.errors.userName;
+            adminKeyError.textContent = data.errors.adminKey;
+            passwordError.textContent = data.errors.password;
+          }
+          if (data.user) {
+            location.assign("/exercises")
+          }
         } catch (err) {
           console.log(err);
         }

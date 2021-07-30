@@ -55,7 +55,8 @@ const signup_post = async (req, res) => {
       res.status(400).json({ errors });
     }
   } else {
-    res.status(400).send("you need a valid admin key");
+    let errors = { adminKey: "you need a valid admin key" };
+    res.status(400).json({ errors });
   }
 };
 
