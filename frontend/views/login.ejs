@@ -5,13 +5,46 @@
     <%- include('./partials/nav.ejs') %>
     <div>
       <h1>Login page</h1>
-      <form>
+      <form id="myForm">
         <label for="userName">User Name:</label>
         <input name="userName" type="text" id="userName" required />
+        <div id="userNameError"></div>
         <label for="password">Password:</label>
-        <input name="password" type="text" id="password" required />
+        <input name="password" type="password" id="password" required />
+        <div id="passwordError"></div>
         <button type="submit">Log in</button>
       </form>
     </div>
+    <script>
+      const myForm = document.getElementById("myForm");
+      const userNameError = document.getElementById("userNameError");
+      const passwordError = document.getElementById("passwordError");
+
+      myForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // get the values:
+        const userName = myForm.userName.value;
+        const password = myForm.password.value;
+        try {
+          const res = await fetch("/login", {
+            method: "POST",
+            body: JSON.stringify({ userName, password }),
+            headers: { "Content-Type": "application/json" },
+          });
+          const data = await res.json();
+          console.log(data);
+          if (data.errors) {
+            userNameError.textContent = data.errors.userName;
+            passwordError.textContent = data.errors.password;
+          }
+          if (data.user) {
+            location.assign("/exercises");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    </script>
   </body>
 </html>

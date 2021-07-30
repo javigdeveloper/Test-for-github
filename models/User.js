@@ -22,11 +22,16 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-// firing a function after doc saved to db:
-userSchema.post("save", (doc, next) => {
-  console.log("user created and saved", doc);
-  next();
-});
+// static method to login user:
+userSchema.statics.login = async function(userName, password) {
+  const user = await this.findOne({ userName });
+  if (user) {
+    const auth = await bcrypt.compare(password, user.password);
+    if (auth) {
+      return user;
+    } throw Error("incorrect password");
+  } throw Error("incorrect user name");
+}
 
 const User = mongoose.model("user", userSchema);
 
