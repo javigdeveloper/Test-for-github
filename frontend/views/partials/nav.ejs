@@ -1,7 +1,13 @@
 <nav class="nav-style">
-  <a href="/exercises">All exercises</a>
-  <a href="/exercises/create">Create exercise</a>
-  <a id="adminModal">Administrator</a>
+  <% if (user) { %>
+    <p>Welcome <%= user.userName %></p>
+    <a href="/exercises">All exercises</a>
+    <a href="/exercises/create">Create exercise</a>
+    <a id="adminModal">Administrator</a>
+    <% } else { %>
+      <a href="/exercises">All exercises</a>
+      <a id="adminModal">Administrator</a>
+  <% } %>
 </nav>
 <div id="modalBgId" class="modal-background">
   <div class="modal">
