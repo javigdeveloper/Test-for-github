@@ -80,9 +80,17 @@ const signup_post = async (req, res) => {
   }
 };
 
+const logout_get = (req, res) => {
+  // delete the jwt by creating one that expires very quickly:
+  res.cookie("jwt", "", { maxAge: 1 });
+  // redirect to login, or somewhere:
+  res.redirect("/exercises");
+};
+
 module.exports = {
   login_get,
   login_post,
   signup_get,
   signup_post,
+  logout_get,
 };
