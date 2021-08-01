@@ -84,7 +84,7 @@ const logout_get = (req, res) => {
   // delete the jwt by creating one that expires very quickly:
   res.cookie("jwt", "", { maxAge: 1 });
   // redirect to login, or somewhere:
-  res.redirect("/exercises");
+  res.redirect("/");
 };
 
 module.exports = {

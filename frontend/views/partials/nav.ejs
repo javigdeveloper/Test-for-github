@@ -1,35 +1,6 @@
 <nav class="nav-style">
-  <% if (user) { %>
-    <p>Welcome <%= user.userName %></p>
-    <a href="/exercises">All exercises</a>
-    <a href="/exercises/create">Create exercise</a>
-    <a href="/logout">Log out</a>
-    <a id="adminModal"></a>
-    <% } else { %>
-      <a href="/exercises">All exercises</a>
-      <a id="adminModal">Administrator</a>
-  <% } %>
+  <p>Welcome <%= user.userName %></p>
+  <a href="/admin">All exercises</a>
+  <a href="/admin/create">Create exercise</a>
+  <a href="/logout">Log out</a>
 </nav>
-<div id="modalBgId" class="modal-background">
-  <div class="modal">
-    <h1>Administrator Sign up</h1>
-    <h2>Contact us if you want a key to sign up.</h2>
-    <a href="../signup">Sign up</a>
-    <a href="../login">Log in</a>
-  </div>
-</div>
-<script>
-  const adminModal = document.getElementById("adminModal");
-  const modalBgId = document.getElementById("modalBgId");
-  // open modal:
-  adminModal.addEventListener("click", () => {
-    modalBgId.classList.add("open");
-  });
-  
-  // close modal:
-  modalBgId.addEventListener("click", (e) => {
-    if (e.target.classList.contains("modal-background")) {
-      modalBgId.classList.remove("open");
-    }
-  })
-</script>
