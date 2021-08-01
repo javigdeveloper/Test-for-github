@@ -4,9 +4,16 @@
   <body>
     <h2>Ooops!</h2>
     <h3>The requested URL was not found on this server.</h3>
-    <h4>back to
-      <a href="/exercises">Exercises</a>
-      page.
-    </h4>
+    <% if (user) { %>
+      <h4>back to
+        <a href="/admin">Administrator</a>
+        page.
+      </h4>
+    <% } else { %>
+      <h4>back to
+        <a href="/">Home</a>
+        page.
+      </h4>
+    <% } %>
   </body>
 </html>

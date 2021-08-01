@@ -25,22 +25,24 @@ const exercise_details = (req, res) => {
 const exercise_create_get = (req, res) => {
   res.render("exercises/create");
 };
+
 const exercise_create_post = (req, res) => {
   const task = new Exercise(req.body);
   task
     .save()
     .then((result) => {
-      res.redirect("/exercises");
+      res.redirect("/admin");
     })
     .catch((err) => {
       console.log(err);
     });
 };
+
 const exercise_delete = (req, res) => {
   const id = req.params.id;
   Exercise.findByIdAndDelete(id)
     .then((result) => {
-      res.json({ redirect: "/exercises" });
+      res.json({ redirect: "/admin" });
     })
     .catch((err) => {
       console.log(err);

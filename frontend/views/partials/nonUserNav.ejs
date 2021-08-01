@@ -1,0 +1,31 @@
+<nav class="nav-style">
+  <a href="/">All exercises</a>
+  <a id="adminModal">Administrator</a>
+</nav>
+<div id="modalBgId" class="modal-background">
+  <div class="modal">
+    <div class="modalHead">
+      <h1>Administrator Signup</h1>
+      <p>This is a private page</p>
+      <p>If you want a key to sign up, write to:</p>
+      <address>javigdeveloper@gmail.com</address>
+    </div>
+    <a href="../signup">Sign up</a>
+    <a href="../login">Log in</a>
+  </div>
+</div>
+<script>
+  const adminModal = document.getElementById("adminModal");
+  const modalBgId = document.getElementById("modalBgId");
+  // open modal:
+  adminModal.addEventListener("click", () => {
+    modalBgId.classList.add("open");
+  });
+
+  // close modal:
+  modalBgId.addEventListener("click", (e) => {
+    if (e.target.classList.contains("modal-background")) {
+      modalBgId.classList.remove("open");
+    }
+  });
+</script>
