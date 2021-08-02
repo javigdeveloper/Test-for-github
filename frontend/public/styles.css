@@ -24,7 +24,14 @@
   margin-bottom: 16px;
   font-size: 22px;
   padding: 20px;
-  background-color: #f1d8d8;
+  background-color: #f9f2f2;
+  border: 2px solid #a20202;
+  text-align: center;
+  text-decoration: none;
+  color: #a20202
+}
+.links a:hover {
+  background-color: #fce7e7;
 }
 body form {
   display: flex;
@@ -39,8 +46,10 @@ textarea {
   width: 80px;
 }
 .task-box {
-  background-color: #f1d8d8;
+  background-color: #f9f2f2;
   padding: 20px;
+  border: 1px solid black;
+  margin: 10px 0;
 }
 .delete {
   padding: 6px;
@@ -91,10 +100,10 @@ textarea {
 .modal a {
   display: block;
   margin-bottom: 10px;
-  background-color: #e6d2d2;;
+  background-color: #f9f2f2;
 }
 .modal a:hover {
-  background-color: #c58f8f;;
+  background-color: #fce7e7;
 }
 /* previous app styles: */
 * {
@@ -104,7 +113,6 @@ body {
   padding: 28px;
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhm-0og3knrN3wJyg4QTaiFFoyCPLuSvk5Fw&usqp=CAU);
   background-size: cover;
-  border: 20px solid #c5ecc5;
 }
 .teacherControlsClass {
   margin: auto;
