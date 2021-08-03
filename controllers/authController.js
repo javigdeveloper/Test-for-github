@@ -33,7 +33,7 @@ const handleErrors = (err) => {
 
 const maxAge = 24 * 60 * 60;
 const createToken = (id) => {
-  return jwt.sign({ id }, "temporary jwt secret", {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: maxAge,
   });
 };
@@ -62,7 +62,7 @@ const signup_get = (req, res) => {
 
 const signup_post = async (req, res) => {
   const { userName, adminKey, password } = req.body;
-  const joiningKey = "testKey";
+  const joiningKey = process.env.JOINING_KEY;
 
   if (joiningKey === adminKey) {
     try {
