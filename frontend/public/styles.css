@@ -1,11 +1,15 @@
+.mobile-nav,
+.mobile-low-nav {
+  display: none;
+}
 .nav-style {
   display: flex;
   justify-content: space-evenly;
-  padding: 10px;
+  align-items: center;
   border-bottom: 1px solid grey;
 }
 .nav-style a {
-  font-size: 26px;
+  font-size: 1.4em;
   text-decoration: none;
   color: #a20202;
 }
@@ -28,7 +32,7 @@
   border: 2px solid #a20202;
   text-align: center;
   text-decoration: none;
-  color: #a20202
+  color: #a20202;
 }
 .links a:hover {
   background-color: #fce7e7;
@@ -110,7 +114,8 @@ textarea {
   font-size: 22px;
 }
 body {
-  padding: 28px;
+  margin: 0;
+  padding: 0;
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhm-0og3knrN3wJyg4QTaiFFoyCPLuSvk5Fw&usqp=CAU);
   background-size: cover;
 }
@@ -178,4 +183,40 @@ body {
 }
 select {
   margin: 5px 2px 5px 2px;
+}
+
+/* @media (max-width: 820px) and (max-height: 700px) and (orientation: landscape) { */
+@media (max-width: 425px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-nav,
+  .mobile-low-nav {
+    display: block;
+    position: sticky;
+    background-color: #f9f2f2;
+  }
+  .mobile-nav {
+    top: 0;
+  }
+  .mobile-low-nav {
+    bottom: 0;
+  }
+  .mobile-low-nav .nav-style {
+    border-bottom: none;
+  }
+  .nav-style a {
+    font-size: 1em;
+    margin: 0.7em 0;
+  }
+  .nav-style p {
+    font-size: 0.8em;
+  }
+  .teacherControlsClass {
+    width: 80%;
+  }
+  .teacherControlsClass textarea {
+    margin: 5% 0;
+    width: 82%;
+  }
 }
