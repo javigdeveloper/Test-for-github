@@ -11,6 +11,12 @@
       <% } %>
       <a class="delete" id="bin" data-doc="<%= result._id %>">delete</a>
     </div>
+    <div class="mobile-low-nav">
+      <nav class="nav-style">
+        <a href="/admin">All exercises</a>
+        <a href="/admin/create">Create exercise</a>
+      </nav>
+    </div>
     <script>
       const bin = document.querySelector("#bin");
       bin.addEventListener("click", (e) => {

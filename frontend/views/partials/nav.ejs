@@ -1,6 +1,15 @@
-<nav class="nav-style">
-  <p>Welcome <%= user.userName %></p>
-  <a href="/admin">All exercises</a>
-  <a href="/admin/create">Create exercise</a>
-  <a href="/logout">Log out</a>
-</nav>
+<div class="desktop-nav">
+  <nav class="nav-style">
+    <p>Welcome <%= user.userName %></p>
+    <a href="/admin">All exercises</a>
+    <a href="/admin/create">Create exercise</a>
+    <a href="/logout">Log out</a>
+  </nav>
+</div>
+
+<div class="mobile-nav">
+  <nav class="nav-style">
+    <p>Welcome <%= user.userName %></p>
+    <a href="/logout">Log out</a>
+  </nav>
+</div>
